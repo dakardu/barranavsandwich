@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: 'nasalization';
+    src: url(../fonts/nasalization.otf);
+}
+body{
+    font-family: 'nasalization';
+}
+.nav{
+    background-color: brown;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+}
+.logo{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 2em;
+    text-transform: uppercase;
+    width: 30%;
+}
+.lista{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+.lista__li{
+    list-style: none;
+}
+.lista__a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1em;
+}
+.lista__a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    border-radius: 1px;
+    background-color: white;
+    display: block;
+    transition: width .3s;
+}
+.lista__a:hover::after{
+    width: 100%;
+}
+.burger{
+    display: none;
+}
+.burger div{
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 5px 0 5px 0;
+    border-radius: rgb(193, 193, 193);
+    transition: all 1s ease-out;
+}
+
+
+@media screen and (max-width: 1024px){
+.lista{
+    width: 60%;
+}
+}
+@media screen and (max-width: 830px){
+    body{
+        overflow-x: hidden;
+    }
+    .burger{
+        display: block;
+    }
+    .lista{
+        position: absolute;
+        right: 0px;
+        top: 8vh;
+        height: 92vh;
+        width: 50%;
+        background-color: brown;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        transform: translate(100%);
+        transition: transform 2s;
+    }
+    .lista__li{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    .lista__activada .lista__li{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    .lista__activada{
+        transform: translateX(0%)
+    }
+    .toogle .burger__line1{
+        transform: translate(0px, 9px) rotate(45deg) ;
+    }
+    .toogle .burger__line2{
+        opacity: 0;
+    }
+    .toogle .burger__line3{
+        transform: translate(0px, -7px) rotate(-45deg);
+    }
+}
