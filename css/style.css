@@ -73,6 +73,9 @@ body{
     body{
         overflow-x: hidden;
     }
+    .nav{
+        width: 100%;
+    }
     .burger{
         display: block;
     }
